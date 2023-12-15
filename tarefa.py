@@ -1,7 +1,4 @@
-# tasks_module.py
-
 tarefas = []  # Lista vazia para armazenar as tarefas
-
 
 def adicionar_tarefa(titulo, prazo):
     if titulo and prazo:

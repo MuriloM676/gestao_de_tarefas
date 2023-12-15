@@ -1,14 +1,14 @@
-# main.py
-
-import tasks_module as tm
+import tarefa as tm
 import tkinter as tk
 from tkinter import simpledialog, messagebox
+
 
 def adicionar():
     titulo = simpledialog.askstring("Adicionar Tarefa", "Digite o título da tarefa:")
     prazo = simpledialog.askstring("Adicionar Tarefa", "Digite o prazo da tarefa (dd/mm/aaaa):")
     resultado = tm.adicionar_tarefa(titulo, prazo)
     messagebox.showinfo("Resultado", resultado)
+
 
 def alterar():
     indice = simpledialog.askinteger("Alterar Tarefa", "Digite o índice da tarefa que deseja alterar:")
@@ -17,23 +17,28 @@ def alterar():
     resultado = tm.alterar_tarefa(indice, novo_titulo, novo_prazo)
     messagebox.showinfo("Resultado", resultado)
 
+
 def listar():
     lista = tm.listar_tarefas()
     messagebox.showinfo("Lista de Tarefas", lista)
+
 
 def deletar():
     indice = simpledialog.askinteger("Deletar Tarefa", "Digite o índice da tarefa que deseja deletar:")
     resultado = tm.deletar_tarefa(indice)
     messagebox.showinfo("Resultado", resultado)
 
+
 def concluir():
     indice = simpledialog.askinteger("Concluir Tarefa", "Digite o índice da tarefa que deseja marcar como concluída:")
     resultado = tm.concluir_tarefa(indice)
     messagebox.showinfo("Resultado", resultado)
 
+
 def salvar():
     resultado = tm.salvar_tarefas()
     messagebox.showinfo("Resultado", resultado)
+
 
 def menu():
     root = tk.Tk()
@@ -56,6 +61,7 @@ def menu():
             opcoes[escolha]()
         else:
             messagebox.showwarning("Opção inválida", "Escolha uma opção válida.")
+
 
 if __name__ == "__main__":
     menu()
